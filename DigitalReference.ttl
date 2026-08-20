@@ -15232,7 +15232,8 @@ A customer interacts with the organization through actions such as order placeme
 
 ###  http://www.w3id.org/ecsel-dr#Diffusion_Batch
 dr:Diffusion_Batch rdf:type owl:Class ;
-                   rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+                   rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> ;
+                   skos:definition "A batch of wafers processed together through a diffusion (furnace) operation, grouped as a single lot for scheduling, tracking, and quality traceability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Division
@@ -15258,7 +15259,8 @@ dr:Document rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr#End_Customer
 dr:End_Customer rdf:type owl:Class ;
                 rdfs:subClassOf dr:Customer ;
-                rdfs:label "End Customer" .
+                rdfs:label "End Customer" ;
+                skos:definition "The final person, organization, or business entity that ultimately receives or uses a product or service at the end of the supply chain."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Failure_Analysis_Code
@@ -15420,6 +15422,7 @@ dr:Public_Holiday rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr#Quality_Management_Lobe
 dr:Quality_Management_Lobe rdf:type owl:Class ;
                            rdfs:label "Quality Management Lobe" ;
+                           skos:definition "The domain covering management of product quality across the supply chain, including complaints, failure analysis, lot and device identification, and the requests and responses that drive quality assurance."@en ;
                            dr:lobe_number 01.004 ;
                            ecsel-dr-OOSMP:abbreviation "QM" .
 
@@ -17550,7 +17553,8 @@ ecsel-dr-BMS:Longer_Lifespan rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Multichannel_Controller_Integrated_Circuit
 ecsel-dr-BMS:Multichannel_Controller_Integrated_Circuit rdf:type owl:Class ;
-                                                        rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                                                        rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                                                        skos:definition "A semiconductor integrated circuit that monitors or controls multiple input or output channels within one device, for example to coordinate several measurements or control paths in a battery management system."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Optimized_Charging
@@ -17581,7 +17585,8 @@ ecsel-dr-BMS:Power_Management_Integrated_Circuit rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Pressure_Sensor
 ecsel-dr-BMS:Pressure_Sensor rdf:type owl:Class ;
-                             rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                             rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                             skos:definition "A semiconductor sensing device that measures pressure and converts the measurement into an electrical signal for monitoring or control, including use in battery management applications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Semiconductor
@@ -19871,7 +19876,8 @@ ecsel-dr-DF:Engineering_Lot rdf:type owl:Class ;
 ecsel-dr-DF:External_Customer rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-DF:Customer_Class ;
                               owl:disjointWith ecsel-dr-DF:Internal_Customer ;
-                              rdfs:label "External Customer"@en .
+                              rdfs:label "External Customer"@en ;
+                              skos:definition "A customer classification for persons, organizations, or business entities outside Infineon that purchase or request its products or services through demand fulfillment."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand
@@ -19898,7 +19904,8 @@ ecsel-dr-DF:Forecasted_Demand rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Internal_Customer
 ecsel-dr-DF:Internal_Customer rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-DF:Customer_Class ;
-                              rdfs:label "Internal Customer"@en .
+                              rdfs:label "Internal Customer"@en ;
+                              skos:definition "A customer classification for stakeholders, departments, or organizational units within the supplying organization that generate demand for products or services supporting internal processes."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand
@@ -20125,13 +20132,15 @@ ecsel-dr-GDM:Activity_Edge rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_Disturbance
 ecsel-dr-GDM:Add_Disturbance rdf:type owl:Class ;
                              rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                             rdfs:label "Add Disturbance"@en .
+                             rdfs:label "Add Disturbance"@en ;
+                             skos:definition "An action that introduces a disturbance, such as a breakdown or interruption, into the production model to evaluate its effect on manufacturing operations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_Equipment
 ecsel-dr-GDM:Add_Equipment rdf:type owl:Class ;
                            rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                           rdfs:label "Add Equipment"@en .
+                           rdfs:label "Add Equipment"@en ;
+                           skos:definition "The action of introducing a new piece of equipment into the production configuration, expanding the available manufacturing or measurement capacity."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_New_Capability
@@ -20171,7 +20180,8 @@ ecsel-dr-GDM:Bill_Of_Materials rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Calendar
 ecsel-dr-GDM:Calendar rdf:type owl:Class ;
                       rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                      rdfs:label "Calendar"@en .
+                      rdfs:label "Calendar"@en ;
+                      skos:definition "A structured representation of working periods, shifts, and non-working times used to schedule and constrain production activities and resource availability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Capability
@@ -20211,19 +20221,22 @@ ecsel-dr-GDM:Cluster rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Current_Machine_State
 ecsel-dr-GDM:Current_Machine_State rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                   rdfs:label "Current Machine State"@en .
+                                   rdfs:label "Current Machine State"@en ;
+                                   skos:definition "The present operational status of a machine, such as running, idle, down, or in maintenance, at a given moment during production."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Current_WIP
 ecsel-dr-GDM:Current_WIP rdf:type owl:Class ;
                          rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                         rdfs:label "Current Wip" .
+                         rdfs:label "Current Wip" ;
+                         skos:definition "A point-in-time snapshot of work in progress showing the actual distribution and status of lots or material that have entered production but have not completed all required operations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Cycle_Time_Commitment
 ecsel-dr-GDM:Cycle_Time_Commitment rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                   rdfs:label "Cycle Time Commitment"@en .
+                                   rdfs:label "Cycle Time Commitment"@en ;
+                                   skos:definition "A committed target for the time in which a product or material is expected to complete a defined production scope during a specified period."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Delivery_Commitment
@@ -20277,7 +20290,8 @@ ecsel-dr-GDM:Equipment rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Equipment_Capability
 ecsel-dr-GDM:Equipment_Capability rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Equipment Capability"@en .
+                                  rdfs:label "Equipment Capability"@en ;
+                                  skos:definition "A qualified ability of a specific piece of equipment to execute a particular operation under defined production conditions."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Equipment_Group
@@ -20402,7 +20416,8 @@ ecsel-dr-GDM:Maintenance rdf:type owl:Class ;
 ecsel-dr-GDM:Material rdf:type owl:Class ;
                       owl:equivalentClass ecsel-dr-PMV:Material ;
                       rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                      rdfs:label "Material"@en .
+                      rdfs:label "Material"@en ;
+                      skos:definition "Physical matter used, transformed, produced, or consumed in a process, including raw and processed materials, components, parts, assemblies, consumables, fuels, lubricants, coolants, and cleaning agents."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Material_Consumption
@@ -20422,7 +20437,8 @@ ecsel-dr-GDM:Material_Transfer rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Max_Lot_Size
 ecsel-dr-GDM:Max_Lot_Size rdf:type owl:Class ;
                           rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                          rdfs:label "Max Lot Size"@en .
+                          rdfs:label "Max Lot Size"@en ;
+                          skos:definition "The maximum quantity of units permitted in a production lot for a defined product and fabrication context."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Operation
@@ -20543,7 +20559,8 @@ ecsel-dr-GDM:Supply_Chain rdf:type owl:Class ;
 ecsel-dr-GDM:Target_Costs rdf:type owl:Class ;
                           owl:equivalentClass ecsel-dr-SO:Target_Costs ;
                           rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                          rdfs:label "Target Costs"@en .
+                          rdfs:label "Target Costs"@en ;
+                          skos:definition "The cost level that a product or service must achieve to meet the desired sales revenue and income objectives or contractual commitments."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_Revenue
@@ -20556,13 +20573,15 @@ ecsel-dr-GDM:Target_Revenue rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_Service_Level
 ecsel-dr-GDM:Target_Service_Level rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Target Service Level"@en .
+                                  rdfs:label "Target Service Level"@en ;
+                                  skos:definition "A performance target expressing the intended proportion of orders or demand that should be satisfied within the defined service conditions."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_WIP
 ecsel-dr-GDM:Target_WIP rdf:type owl:Class ;
                         rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                        rdfs:label "Target WIP"@en .
+                        rdfs:label "Target WIP"@en ;
+                        skos:definition "The planned range of work-in-progress units to be maintained for a product in order to support the intended production flow."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Team
@@ -20590,7 +20609,8 @@ ecsel-dr-GDM:Time_Constraint rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Worker_Qualification
 ecsel-dr-GDM:Worker_Qualification rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Worker Qualification"@en .
+                                  rdfs:label "Worker Qualification"@en ;
+                                  skos:definition "A specification of the qualified workforce required or available to operate equipment, work within a team, or perform maintenance activities."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Workplan
@@ -24372,27 +24392,32 @@ ecsel-dr-SO:Workshop rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr/quality/Assembly_Lot
 <http://www.w3id.org/ecsel-dr/quality/Assembly_Lot> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+                                                    rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> ;
+                                                    skos:definition "A production lot grouping devices that are processed together through the assembly (back-end) stage, tracked as a single unit for manufacturing control and quality traceability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Failure_Analysis
 <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> rdf:type owl:Class ;
-                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                        skos:definition "The systematic investigation of a failed or non-conforming device to determine the root cause of failure, supporting corrective action and quality improvement."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Quality_Request
 <http://www.w3id.org/ecsel-dr/quality/Quality_Request> rdf:type owl:Class ;
-                                                       rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                       rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                       skos:definition "A request raised regarding product quality, such as a customer complaint or issue report, that initiates investigation and resolution within the quality-management process."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Quality_Response
 <http://www.w3id.org/ecsel-dr/quality/Quality_Response> rdf:type owl:Class ;
-                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                        skos:definition "The formal reply issued in answer to a quality request, communicating findings, corrective actions, or resolution back to the customer or requester."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Substrate
 <http://www.w3id.org/ecsel-dr/quality/Substrate> rdf:type owl:Class ;
-                                                 rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                 rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                 skos:definition "The base wafer or supporting material on which semiconductor devices are fabricated, tracked within quality management for identification and traceability."@en .
 
 
 #################################################################
