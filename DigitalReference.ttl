@@ -15436,8 +15436,9 @@ dr:Role rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Sales_Channel
 dr:Sales_Channel rdf:type owl:Class ;
-                 rdfs:subClassOf dr:Customer ;
-                 rdfs:label "Sales Channel" .
+                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                 rdfs:label "Sales Channel" ;
+                 skos:definition "a route or intermediary through which products or services are sold"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
