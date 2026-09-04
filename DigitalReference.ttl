@@ -15232,7 +15232,8 @@ A customer interacts with the organization through actions such as order placeme
 
 ###  http://www.w3id.org/ecsel-dr#Diffusion_Batch
 dr:Diffusion_Batch rdf:type owl:Class ;
-                   rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+                   rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> ;
+                   skos:definition "A batch of wafers processed together through a diffusion (furnace) operation, grouped as a single lot for scheduling, tracking, and quality traceability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Division
@@ -15258,7 +15259,8 @@ dr:Document rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr#End_Customer
 dr:End_Customer rdf:type owl:Class ;
                 rdfs:subClassOf dr:Customer ;
-                rdfs:label "End Customer" .
+                rdfs:label "End Customer" ;
+                skos:definition "The final person, organization, or business entity that ultimately receives or uses a product or service at the end of the supply chain."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Failure_Analysis_Code
@@ -15420,6 +15422,7 @@ dr:Public_Holiday rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr#Quality_Management_Lobe
 dr:Quality_Management_Lobe rdf:type owl:Class ;
                            rdfs:label "Quality Management Lobe" ;
+                           skos:definition "The domain covering management of product quality across the supply chain, including complaints, failure analysis, lot and device identification, and the requests and responses that drive quality assurance."@en ;
                            dr:lobe_number 01.004 ;
                            ecsel-dr-OOSMP:abbreviation "QM" .
 
@@ -15433,8 +15436,9 @@ dr:Role rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr#Sales_Channel
 dr:Sales_Channel rdf:type owl:Class ;
-                 rdfs:subClassOf dr:Customer ;
-                 rdfs:label "Sales Channel" .
+                 rdfs:subClassOf dr:Supply_Chain_Lobe ;
+                 rdfs:label "Sales Channel" ;
+                 skos:definition "a route or intermediary through which products or services are sold"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#Semiconductor_Development_Lobe
@@ -17550,7 +17554,8 @@ ecsel-dr-BMS:Longer_Lifespan rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Multichannel_Controller_Integrated_Circuit
 ecsel-dr-BMS:Multichannel_Controller_Integrated_Circuit rdf:type owl:Class ;
-                                                        rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                                                        rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                                                        skos:definition "A semiconductor integrated circuit that monitors or controls multiple input or output channels within one device, for example to coordinate several measurements or control paths in a battery management system."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Optimized_Charging
@@ -17581,7 +17586,8 @@ ecsel-dr-BMS:Power_Management_Integrated_Circuit rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Pressure_Sensor
 ecsel-dr-BMS:Pressure_Sensor rdf:type owl:Class ;
-                             rdfs:subClassOf ecsel-dr-BMS:Semiconductor .
+                             rdfs:subClassOf ecsel-dr-BMS:Semiconductor ;
+                             skos:definition "A semiconductor sensing device that measures pressure and converts the measurement into an electrical signal for monitoring or control, including use in battery management applications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Semiconductor
@@ -18919,19 +18925,22 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System> ;
                                                               owl:disjointWith <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System> ;
                                                               rdfs:label "Arrowhead Application Component"@en ,
-                                                                         "Arrowhead Application System"@en .
+                                                                         "Arrowhead Application System"@en ;
+                                                                         skos:definition """AH Application System is a subclass of AH System representing a software system built to address a specific, real-world automation or IoT use case rather than to provide Arrowhead Framework infrastructure. Application systems interact with the framework by registering, discovering, and exchanging services through the core systems, and are disjoint from core systems."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_System_Sy_SD> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Description_Sy_SD> ;
-                                                                    rdfs:label "AH Application System Sy SD"@en .
+                                                                    rdfs:label "AH Application System Sy SD"@en ;
+                                                                    skos:definition """AH Application System Sy SD is a subclass of System Description Sy SD providing the plain, external description of an Arrowhead application system, explaining what the system does, which services it provides and consumes, and its role in the system of systems, without specifying internal design or implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Application_System_Sy_SDD> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Design_Description_Sy_SDD> ;
-                                                                     rdfs:label "AH Application System Sy SDD"@en .
+                                                                     rdfs:label "AH Application System Sy SDD"@en ;
+                                                                     skos:definition """AH Application System Sy SDD is a subclass of System Design Description Sy SDD providing the detailed, internal design description of an Arrowhead application system, specifying its components, architecture, and implementation choices to support the development, deployment, and maintenance of that specific application system."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_Control_Service_IDD
@@ -18951,25 +18960,29 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_Sy_SD> rdf:type owl:Class ;
                                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SD> ;
-                                                                      rdfs:label "AH Authorization System Sy SD"@en .
+                                                                      rdfs:label "AH Authorization System Sy SD"@en ;
+                                                                      skos:definition """AH Authorization System Sy SD is a subclass of AH Mandatory Core System Sy SD providing the plain, external description of the Authorization System, one of the three mandatory core systems in every Arrowhead local environment, explaining its role in enforcing access control between communicating systems without specifying internal design."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_Sy_SDD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SDD> ;
-                                                                       rdfs:label "AH Authorization System Sy SDD"@en .
+                                                                       rdfs:label "AH Authorization System Sy SDD"@en ;
+                                                                       skos:definition """AH Authorization System Sy SDD is a subclass of AH Mandatory Core System Sy SDD providing the detailed, internal design description of the Authorization System, specifying how it is built to implement authentication and access control for service exchanges within an Arrowhead local environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_WADL
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Authorization_System_WADL> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Web_Application_Description_WADL> ;
-                                                                     rdfs:label "AH Authorization System WADL"@en .
+                                                                     rdfs:label "AH Authorization System WADL"@en ;
+                                                                     skos:definition """AH Authorization System WADL is a subclass of System Web Application Description WADL representing the machine-readable XML description of the Authorization System's HTTP-based web service interface, formally specifying the resources and operations it exposes to support automated client integration and tool-generated documentation."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service> ;
-                                                                         rdfs:label "AH Automation Supporting Service"@en .
+                                                                         rdfs:label "AH Automation Supporting Service"@en ;
+                                                                         skos:definition """AH Automation Supporting Service is a subclass of AH Core Service representing an optional, built-in service that extends the Arrowhead Framework beyond its three mandatory core services. Unlike the mandatory core services, automation supporting services are not required for a local cloud to function but enrich its operational scope with additional capabilities such as event handling, data management, session control, inter-cloud communication, device and system discovery, or quality-of-service monitoring."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_IDD
@@ -18982,32 +18995,37 @@ ecsel-dr-CO2Savings:Wind_Turbine rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_SD> ;
-                                                                            rdfs:label "AH Automation Supporting Service SD"@en .
+                                                                            rdfs:label "AH Automation Supporting Service SD"@en ;
+                                                                            skos:definition """AH Automation Supporting Service SD is a subclass of AH Core Service SD providing plain, general descriptions of optional built-in services that extend the Arrowhead Framework beyond its mandatory core, covering capabilities such as event handling, data management, session control, or device discovery. These descriptions explain the purpose and role of each supporting service without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System> ;
                                                                         owl:disjointWith <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System> ;
-                                                                        rdfs:label "AH Automation Supporting System"@en .
+                                                                        rdfs:label "AH Automation Supporting System"@en ;
+                                                                        skos:definition """AH Automation Supporting System is a subclass of AH Core System representing an optional, built-in system that extends the mandatory core infrastructure of an Arrowhead local cloud with additional capabilities such as device registration, event handling, data management, inter-cloud communication, or quality-of-service monitoring. Unlike mandatory core systems, automation supporting systems are not required for a local cloud to function but enrich its operational scope."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> rdf:type owl:Class ;
                                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SD> ;
-                                                                              rdfs:label "AH Automation Supporting System Sy SD"@en .
+                                                                              rdfs:label "AH Automation Supporting System Sy SD"@en ;
+                                                                              skos:definition """AH Automation Supporting System Sy SD is a subclass of AH Core System Sy SD providing the plain, external description of an Arrowhead automation supporting system, one of the optional built-in systems that extends the mandatory core with additional capabilities, explaining its role and service interactions within the local cloud without specifying internal implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SDD> ;
-                                                                               rdfs:label "AH Automation Supporting System Sy SDD"@en .
+                                                                               rdfs:label "AH Automation Supporting System Sy SDD"@en ;
+                                                                               skos:definition """AH Automation Supporting System Sy SDD is a subclass of AH Core System Sy SDD providing the detailed, internal design description of an Arrowhead automation supporting system, an optional core system that extends the mandatory infrastructure, specifying its internal architecture and the implementation choices needed to build and deploy it."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service> rdf:type owl:Class ;
                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service> ;
-                                                        rdfs:label "AH Core Service"@en .
+                                                        rdfs:label "AH Core Service"@en ;
+                                                        skos:definition """AH Core Service is a subclass of AH Service representing the built-in services provided by the Arrowhead Framework's own core systems rather than by application-specific systems. Core services are divided into mandatory core services, which must be present in every local cloud, and automation supporting services, which are optional extensions providing additional operational capabilities."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service_IDD
@@ -19037,13 +19055,15 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SD> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Description_Sy_SD> ;
-                                                             rdfs:label "AH Core System Sy SD"@en .
+                                                             rdfs:label "AH Core System Sy SD"@en ;
+                                                             skos:definition """AH Core System Sy SD is a subclass of System Description Sy SD providing the plain, external description of an Arrowhead core system, applicable to both mandatory and automation supporting core systems, explaining the system's role and its service interactions within the local cloud without detailing internal implementation."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SDD> rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Design_Description_Sy_SDD> ;
-                                                              rdfs:label "AH Core System Sy SDD"@en .
+                                                              rdfs:label "AH Core System Sy SDD"@en ;
+                                                              skos:definition """AH Core System Sy SDD is a subclass of System Design Description Sy SDD providing the detailed, internal design description of an Arrowhead core system, applicable to both mandatory and automation supporting core systems, specifying their internal structure and implementation choices needed to build and maintain those systems."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device
@@ -19064,43 +19084,50 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Discovery_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Discovery_Service_SD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                       rdfs:label "AH Device Discovery Service SD"@en .
+                                                                       rdfs:label "AH Device Discovery Service SD"@en ;
+                                                                       skos:definition """AH Device Discovery Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that automatically finds and registers physical hardware devices, such as sensors and machines, within an Arrowhead environment. It explains the purpose and role of device discovery without specifying any technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Registry_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Registry_System_Sy_SD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                                        rdfs:label "AH Device Registry System Sy SD"@en .
+                                                                        rdfs:label "AH Device Registry System Sy SD"@en ;
+                                                                        skos:definition """AH Device Registry System Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the Device Registry System, an optional core system that maintains a record of physical hardware devices registered within an Arrowhead environment, explaining its role and service interactions without internal implementation detail."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Registry_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Device_Registry_System_Sy_SDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                                         rdfs:label "AH Device Registry System Sy SDD"@en .
+                                                                         rdfs:label "AH Device Registry System Sy SDD"@en ;
+                                                                         skos:definition """AH Device Registry System Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the Device Registry System, specifying how it is built to maintain and manage a registry of physical hardware devices within an Arrowhead environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gatekeeper_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gatekeeper_System_Sy_SD> rdf:type owl:Class ;
                                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                                   rdfs:label "AH Gatekeeper System Sy SD"@en .
+                                                                   rdfs:label "AH Gatekeeper System Sy SD"@en ;
+                                                                   skos:definition """AH Gatekeeper System Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the Gatekeeper System, an optional core system responsible for negotiating and controlling access between separate Arrowhead local environments, explaining its inter-cloud coordination role without internal implementation detail."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gatekeeper_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gatekeeper_System_Sy_SDD> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                                    rdfs:label "AH Gatekeeper System Sy SDD"@en .
+                                                                    rdfs:label "AH Gatekeeper System Sy SDD"@en ;
+                                                                    skos:definition """AH Gatekeeper System Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the Gatekeeper System, specifying how it is built to manage the negotiation and authorisation of inter-cloud service exchanges between separate Arrowhead local environments."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gateway_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gateway_System_Sy_SD> rdf:type owl:Class ;
                                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                                rdfs:label "AH Gateway System Sy SD"@en .
+                                                                rdfs:label "AH Gateway System Sy SD"@en ;
+                                                                skos:definition """AH Gateway System Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the Gateway System, an optional core system that relays data between separate Arrowhead local environments once inter-cloud access has been negotiated, explaining its role and service interactions without internal implementation detail."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gateway_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Gateway_System_Sy_SDD> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                                 rdfs:label "AH Gateway System Sy SDD"@en .
+                                                                 rdfs:label "AH Gateway System Sy SDD"@en ;
+                                                                 skos:definition """AH Gateway System Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the Gateway System, specifying how it is built to relay data across the boundary between separate Arrowhead local environments once inter-cloud access has been established."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_IDD
@@ -19113,19 +19140,22 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Global_Service_Discovery_Service_SD> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                               rdfs:label "AH Global Service Discovery Service SD"@en .
+                                                                               rdfs:label "AH Global Service Discovery Service SD"@en ;
+                                                                               skos:definition """AH Global Service Discovery Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that enables systems to search for and locate services available beyond their own local environment. It explains the cross-network discovery role of this service without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Historian_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Historian_Sy_SD> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                           rdfs:label "AH Historian Sy SD"@en .
+                                                           rdfs:label "AH Historian Sy SD"@en ;
+                                                           skos:definition """AH Historian Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the Historian system, an optional core system that records and stores historical operational data from the local environment for retrospective analysis and traceability, without specifying internal implementation detail."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Historian_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Historian_Sy_SDD> rdf:type owl:Class ;
                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                            rdfs:label "AH Historian Sy SDD"@en .
+                                                            rdfs:label "AH Historian Sy SDD"@en ;
+                                                            skos:definition """AH Historian Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the Historian system, specifying how it is built to record, store, and provide access to historical operational data from the Arrowhead environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_IDD
@@ -19138,7 +19168,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Inter_Cloud_Negotiations_Service_SD> rdf:type owl:Class ;
                                                                                rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                               rdfs:label "AH Inter Cloud Negotiations Service SD"@en .
+                                                                               rdfs:label "AH Inter Cloud Negotiations Service SD"@en ;
+                                                                               skos:definition """AH Inter Cloud Negotiations Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that establishes agreements and authorised connections between separate Arrowhead local environments. It explains the inter-cloud coordination role of this service without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Local_Cloud
@@ -19151,7 +19182,8 @@ Arriwhead Core Systems can be distinguished in Arrowhead Mandatory Core Systems 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service> rdf:type owl:Class ;
                                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_Service> ;
-                                                                  rdfs:label "AH Mandatory Core Service"@en .
+                                                                  rdfs:label "AH Mandatory Core Service"@en ;
+                                                                  skos:definition """AH Mandatory Core Service is a subclass of AH Core Service representing the three services that must be present in every Arrowhead local environment: the service directory enabling systems to find one another, the access control service governing which systems may communicate, and the coordination service matching consumers to appropriate providers. Without these three services, a local cloud cannot operate."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_IDD
@@ -19172,19 +19204,22 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System> ;
-                                                                 rdfs:label "AH Mandatory Core System"@en .
+                                                                 rdfs:label "AH Mandatory Core System"@en ;
+                                                                 skos:definition """AH Mandatory Core System is a subclass of AH Core System representing one of the three systems that must be present in every Arrowhead local environment: the Service Registry that enables systems to publish and discover services, the Orchestrator that dynamically matches consumers to appropriate service providers, and the Authorization system that enforces access control between communicating systems."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SD> ;
-                                                                       rdfs:label "AH Mandatory Core System Sy SD"@en .
+                                                                       rdfs:label "AH Mandatory Core System Sy SD"@en ;
+                                                                       skos:definition """AH Mandatory Core System Sy SD is a subclass of AH Core System Sy SD providing the plain, external description of one of the three mandatory core systems required in every Arrowhead local environment, covering the Service Registry, Orchestrator, and Authorization systems, each explained in terms of its essential role and service interactions without specifying internal design."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SDD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Core_System_Sy_SDD> ;
-                                                                        rdfs:label "AH Mandatory Core System Sy SDD"@en .
+                                                                        rdfs:label "AH Mandatory Core System Sy SDD"@en ;
+                                                                        skos:definition """AH Mandatory Core System Sy SDD is a subclass of AH Core System Sy SDD providing the detailed, internal design description of one of the three mandatory core systems required in every Arrowhead local environment, specifying the internal architecture and implementation choices for the Service Registry, Orchestrator, or Authorization system."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_IDD
@@ -19197,43 +19232,50 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_Service_SD> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> ;
-                                                                    rdfs:label "AH Orchestration Service SD"@en .
+                                                                    rdfs:label "AH Orchestration Service SD"@en ;
+                                                                    skos:definition """AH Orchestration Service SD is a subclass of AH Mandatory Core Service SD providing the plain, general description of the coordination service required in every Arrowhead local environment. It explains the role of this service in dynamically matching service consumer requests to the most appropriate service providers at runtime, without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_System_Sy_SD> rdf:type owl:Class ;
                                                                       rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SD> ;
-                                                                      rdfs:label "AH Orchestration System Sy SD"@en .
+                                                                      rdfs:label "AH Orchestration System Sy SD"@en ;
+                                                                      skos:definition """AH Orchestration System Sy SD is a subclass of AH Mandatory Core System Sy SD providing the plain, external description of the Orchestration System, one of the three mandatory core systems in every Arrowhead local environment, explaining its role in dynamically matching service consumer requests to appropriate service providers at runtime."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestration_System_Sy_SDD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SDD> ;
-                                                                       rdfs:label "AH Orchestration System Sy SDD"@en .
+                                                                       rdfs:label "AH Orchestration System Sy SDD"@en ;
+                                                                       skos:definition """AH Orchestration System Sy SDD is a subclass of AH Mandatory Core System Sy SDD providing the detailed, internal design description of the Orchestration System, specifying how it is built to match service consumer requests to appropriate service providers at runtime within an Arrowhead local environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestrator_WADL
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Orchestrator_WADL> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Web_Application_Description_WADL> ;
-                                                             rdfs:label "AH Orchestrator WADL"@en .
+                                                             rdfs:label "AH Orchestrator WADL"@en ;
+                                                             skos:definition """AH Orchestrator WADL is a subclass of System Web Application Description WADL representing the machine-readable XML description of the Orchestration System's HTTP-based web service interface, formally specifying the resources and operations it exposes for service matching and consumer-provider coordination."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_QoS_Manager_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_QoS_Manager_Sy_SD> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                             rdfs:label "AH QoS Manager Sy SD"@en .
+                                                             rdfs:label "AH QoS Manager Sy SD"@en ;
+                                                             skos:definition """AH QoS Manager Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the Quality of Service Manager system, an optional core system that monitors and manages the performance and reliability characteristics of service exchanges within the local environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_QoS_Manager_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_QoS_Manager_Sy_SDD> rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                              rdfs:label "AH QoS Manager Sy SDD"@en .
+                                                              rdfs:label "AH QoS Manager Sy SDD"@en ;
+                                                              skos:definition """AH QoS Manager Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the Quality of Service Manager system, specifying how it is built to monitor and enforce performance and reliability characteristics of service exchanges within the local environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Service> ;
-                                                   rdfs:label "AH Service"@en .
+                                                   rdfs:label "AH Service"@en ;
+                                                   skos:definition """AH Service is a subclass of Service representing a service deployed and governed within the Eclipse Arrowhead Framework, adhering to its principles of loose coupling and late runtime binding. Each AH Service is documented through a Service Description and one or more Interface Design Descriptions, and is classified as either a core service supporting framework operation or an application service addressing a specific use case."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_IDD
@@ -19246,13 +19288,15 @@ While the class AH_mandatory_core_service contains the mandatory core services o
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Discovery_Service_SD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> ;
-                                                                        rdfs:label "AH Service Discovery Service SD"@en .
+                                                                        rdfs:label "AH Service Discovery Service SD"@en ;
+                                                                        skos:definition """AH Service Discovery Service SD is a subclass of AH Mandatory Core Service SD providing the plain, general description of the service directory lookup function required in every Arrowhead local environment. It explains how this service enables any system in the network to search for and find other services that are currently available and registered."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Documentation> ;
-                                                                 rdfs:label "AH Service Documentation"@en .
+                                                                 rdfs:label "AH Service Documentation"@en ;
+                                                                 skos:definition """AH Service Documentation is a subclass of Service Documentation representing the complete documentation set for a service within the Arrowhead Framework, comprising at minimum a Service Description and an Interface Design Description, and optionally a Communication Profile and Semantic Profile. Together these documents specify both the purpose and the technical implementation of the service in a standardised and reusable form."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Documentation_Document
@@ -19274,19 +19318,22 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_System_Sy_SD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SD> ;
-                                                                         rdfs:label "AH Service Registry System Sy SD"@en .
+                                                                         rdfs:label "AH Service Registry System Sy SD"@en ;
+                                                                         skos:definition """AH Service Registry System Sy SD is a subclass of AH Mandatory Core System Sy SD providing the plain, external description of the Service Registry System, one of the three mandatory core systems in every Arrowhead local environment, explaining its role as the directory where systems publish available services and consumers discover them."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_System_Sy_SDD> rdf:type owl:Class ;
                                                                           rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_System_Sy_SDD> ;
-                                                                          rdfs:label "AH Service Registry System Sy SDD"@en .
+                                                                          rdfs:label "AH Service Registry System Sy SDD"@en ;
+                                                                          skos:definition """AH Service Registry System Sy SDD is a subclass of AH Mandatory Core System Sy SDD providing the detailed, internal design description of the Service Registry System, specifying how it is built to implement the service publication and discovery directory function in every Arrowhead local environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_WADL
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Service_Registry_WADL> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Web_Application_Description_WADL> ;
-                                                                 rdfs:label "AH Service Registry WADL"@en .
+                                                                 rdfs:label "AH Service Registry WADL"@en ;
+                                                                 skos:definition """AH Service Registry WADL is a subclass of System Web Application Description WADL representing the machine-readable XML description of the Service Registry System's HTTP-based web service interface, formally specifying the resources and operations it exposes for service registration and discovery."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_IDD
@@ -19299,7 +19346,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Establish_Service_SD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                        rdfs:label "AH Session Establish Service SD"@en .
+                                                                        rdfs:label "AH Session Establish Service SD"@en ;
+                                                                        skos:definition """AH Session Establish Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that handles the initiation of communication sessions between systems, explaining how participating systems are identified and how sessions are started, without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_IDD
@@ -19312,7 +19360,8 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Session_Management_Service_SD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                         rdfs:label "AH Session Management Service SD"@en .
+                                                                         rdfs:label "AH Session Management Service SD"@en ;
+                                                                         skos:definition """AH Session Management Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that oversees the complete lifecycle of communication sessions between systems, from initiation through active use to orderly termination, without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_IDD
@@ -19325,13 +19374,15 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Store_Management_Service_SD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> ;
-                                                                       rdfs:label "AH Store Management Service SD"@en .
+                                                                       rdfs:label "AH Store Management Service SD"@en ;
+                                                                       skos:definition """AH Store Management Service SD is a subclass of AH Mandatory Core Service SD providing the plain, general description of the service responsible for storing, organising, and retrieving data within an Arrowhead local environment. It explains the managed data store role of this service, making stored information reliably accessible to other systems in the network."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Software_System> ;
-                                                  rdfs:label "AH System"@en .
+                                                  rdfs:label "AH System"@en ;
+                                                  skos:definition """AH System is a subclass of Software System representing any software system that is compliant with and deployed within the Eclipse Arrowhead Framework. An AH System participates in the framework by providing and consuming services through the core systems, and is classified as either a core system providing built-in framework infrastructure or an application system addressing a specific use case."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_IDD
@@ -19344,43 +19395,50 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Discovery_Service_SD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_Service_SD> ;
-                                                                       rdfs:label "AH System Discovery Service SD"@en .
+                                                                       rdfs:label "AH System Discovery Service SD"@en ;
+                                                                       skos:definition """AH System Discovery Service SD is a subclass of AH Automation Supporting Service SD providing the plain, general description of the service that finds and catalogues the software systems present in an Arrowhead environment. It explains the role of this service in maintaining an accurate and current registry of active network members, without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation> rdf:type owl:Class ;
                                                                 rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Documentation> ;
-                                                                rdfs:label "AH System Documentation"@en .
+                                                                rdfs:label "AH System Documentation"@en ;
+                                                                skos:definition """AH System Documentation is a subclass of System Documentation representing the complete documentation set for an individual system within the Arrowhead Framework, covering both the external System Description that explains the system's purpose and services, and the internal System Design Description that specifies how it is built, together providing the information needed to understand, implement, and integrate the system."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation_Document
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation_Document> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Documentation_Document> ;
-                                                                         rdfs:label "AH System Documentation Document"@en .
+                                                                         rdfs:label "AH System Documentation Document"@en ;
+                                                                         skos:definition """AH System Documentation Document is a subclass of Documentation Document representing any formal document produced as part of the documentation of a software system within the Arrowhead Framework. These documents collectively describe a system from both external and internal perspectives, covering what it does and how it is designed, providing the information needed to understand, implement, and integrate it."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation> rdf:type owl:Class ;
                                                                            rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Documentation> ;
-                                                                           rdfs:label "AH System Of Systems Documentation"@en .
+                                                                           rdfs:label "AH System Of Systems Documentation"@en ;
+                                                                           skos:definition """AH System Of Systems Documentation is a subclass of System Documentation representing the complete documentation set for a composed system of systems within the Arrowhead Framework, covering both the overall description of the composition and its internal design, providing the information needed to engineer, deploy, and validate multi-system Arrowhead automation solutions."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation_Document
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation_Document> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Documentation_Document> ;
-                                                                                    rdfs:label "AH System Of Systems Documentation Document"@en .
+                                                                                    rdfs:label "AH System Of Systems Documentation Document"@en ;
+                                                                                    skos:definition """AH System Of Systems Documentation Document is a subclass of Documentation Document representing any formal document produced as part of the documentation of a system of systems within the Arrowhead Framework. These documents describe composed, multi-system deployments at the level of the overall architecture, covering both collective purpose and internal composition design."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Registry_System_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Registry_System_Sy_SD> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SD> ;
-                                                                        rdfs:label "AH System Registry System Sy SD"@en .
+                                                                        rdfs:label "AH System Registry System Sy SD"@en ;
+                                                                        skos:definition """AH System Registry System Sy SD is a subclass of AH Automation Supporting System Sy SD providing the plain, external description of the System Registry system, an optional core system that catalogues the software systems active within an Arrowhead environment to support system-level discovery and management."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Registry_System_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Registry_System_Sy_SDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Automation_Supporting_System_Sy_SDD> ;
-                                                                         rdfs:label "AH System Registry System Sy SDD"@en .
+                                                                         rdfs:label "AH System Registry System Sy SDD"@en ;
+                                                                         skos:definition """AH System Registry System Sy SDD is a subclass of AH Automation Supporting System Sy SDD providing the detailed, internal design description of the System Registry system, specifying how it is built to catalogue and manage information about the software systems active within an Arrowhead environment."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_IDD
@@ -19393,13 +19451,15 @@ That is, CP and SP are useful if different service implementations use the same 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Token_Generation_Service_SD> rdf:type owl:Class ;
                                                                        rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_Mandatory_Core_Service_SD> ;
-                                                                       rdfs:label "AH Token Generation Servcie SD"@en .
+                                                                       rdfs:label "AH Token Generation Servcie SD"@en ;
+                                                                       skos:definition """AH Token Generation Service SD is a subclass of AH Mandatory Core Service SD providing the plain, general description of the service that issues secure authorisation tokens granting a service consumer time- or scope-limited permission to consume a provider's service. It explains the token-based access-control role of this service within the mandatory security functionality of an Arrowhead local environment, without specifying technical implementation details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Arrowhead
 <http://www.w3id.org/ecsel-dr-Cloud-AH#Arrowhead> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#Service_Oriented_Architecture> ;
-                                                  rdfs:label "Arrowhead"@en .
+                                                  rdfs:label "Arrowhead"@en ;
+                                                  skos:definition """Arrowhead is a subclass of Service Oriented Architecture representing the Eclipse Arrowhead Framework, an industrial automation and IoT implementation of service-oriented architecture principles. It organises software systems and services within local clouds, enforcing service registration, access control, and runtime orchestration through mandatory core systems, and enabling flexible, interoperable composition of automation system of systems."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Communication_Profile_CP
@@ -19610,7 +19670,8 @@ The concept constrained device was introduced in the context of the Internet of 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#SoA_Property
 <http://www.w3id.org/ecsel-dr-Cloud-AH#SoA_Property> rdf:type owl:Class ;
                                                      rdfs:subClassOf dr:Cloud_Lobe ;
-                                                     rdfs:label "SoA Property"@en .
+                                                     rdfs:label "SoA Property"@en ;
+                                                     skos:definition """SoA Property is a class representing a quality or characteristic of a service-oriented architecture, such as loose coupling, late binding, discoverability, or interoperability, that governs how the architecture and its services are designed and expected to behave. Within the Arrowhead Framework, SoA properties guide compliance verification and design decisions at both service and system level."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#Software_System
@@ -19630,13 +19691,15 @@ The concept constrained device was introduced in the context of the Internet of 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Description_Sy_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Description_Sy_SD> rdf:type owl:Class ;
                                                                  rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation_Document> ;
-                                                                 rdfs:label "System Description Sy SD"@en .
+                                                                 rdfs:label "System Description Sy SD"@en ;
+                                                                 skos:definition """System Description Sy SD is a subclass of AH System Documentation Document providing a plain, technology-independent description of a software system from an external perspective, explaining what services it provides and consumes and the role it plays within the broader system of systems, without detailing internal design or implementation choices."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Design_Description_Sy_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Design_Description_Sy_SDD> rdf:type owl:Class ;
                                                                          rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Documentation_Document> ;
-                                                                         rdfs:label "System Design Description Sy SDD"@en .
+                                                                         rdfs:label "System Design Description Sy SDD"@en ;
+                                                                         skos:definition """System Design Description Sy SDD is a subclass of AH System Documentation Document providing a detailed internal description of how a software system is designed and built, including its components, architecture, and implementation choices. It complements the external System Description by providing the technical depth needed to develop, deploy, and maintain the system."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Documentation
@@ -19656,13 +19719,15 @@ The concept constrained device was introduced in the context of the Internet of 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Of_Systems_Description_So_SD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Of_Systems_Description_So_SD> rdf:type owl:Class ;
                                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation_Document> ;
-                                                                            rdfs:label "System Of Systems Description So SD"@en .
+                                                                            rdfs:label "System Of Systems Description So SD"@en ;
+                                                                            skos:definition """System Of Systems Description So SD is a subclass of AH System Of Systems Documentation Document providing a plain, external description of a composed system of systems, explaining which systems participate, what collective capability emerges from their interaction, and the role of the composition in the overall automation solution, without specifying internal design details."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Of_Systems_Design_Description_So_SDD
 <http://www.w3id.org/ecsel-dr-Cloud-AH#System_Of_Systems_Design_Description_So_SDD> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Cloud-AH#AH_System_Of_Systems_Documentation_Document> ;
-                                                                                    rdfs:label "System Of Systems Design Description So SDD"@en .
+                                                                                    rdfs:label "System Of Systems Design Description So SDD"@en ;
+                                                                                    skos:definition """System Of Systems Design Description So SDD is a subclass of AH System Of Systems Documentation Document providing a detailed, internal description of how a system of systems is architected and composed, specifying inter-system dependencies, orchestration decisions, and the technical choices that govern how constituent systems work together to realise the intended automation capability."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Cloud-AH#System_Web_Application_Description_WADL
@@ -19812,7 +19877,8 @@ ecsel-dr-DF:Engineering_Lot rdf:type owl:Class ;
 ecsel-dr-DF:External_Customer rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-DF:Customer_Class ;
                               owl:disjointWith ecsel-dr-DF:Internal_Customer ;
-                              rdfs:label "External Customer"@en .
+                              rdfs:label "External Customer"@en ;
+                              skos:definition "A customer classification for persons, organizations, or business entities outside Infineon that purchase or request its products or services through demand fulfillment."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Firm_Order_Demand
@@ -19839,7 +19905,8 @@ ecsel-dr-DF:Forecasted_Demand rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-DF#Internal_Customer
 ecsel-dr-DF:Internal_Customer rdf:type owl:Class ;
                               rdfs:subClassOf ecsel-dr-DF:Customer_Class ;
-                              rdfs:label "Internal Customer"@en .
+                              rdfs:label "Internal Customer"@en ;
+                              skos:definition "A customer classification for stakeholders, departments, or organizational units within the supplying organization that generate demand for products or services supporting internal processes."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-DF#Inventory_Replenishment_Demand
@@ -20052,7 +20119,8 @@ ecsel-dr-DF:Time_Interval rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Activity
 ecsel-dr-GDM:Activity rdf:type owl:Class ;
                       rdfs:subClassOf dr:Process_Lobe ;
-                      rdfs:label "Activity" .
+                      rdfs:label "Activity" ;
+                      skos:definition """Activity is a discrete step or unit of work within a modelled process, connected by activity edges to define the process flow."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Activity_Edge
@@ -20065,13 +20133,15 @@ ecsel-dr-GDM:Activity_Edge rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_Disturbance
 ecsel-dr-GDM:Add_Disturbance rdf:type owl:Class ;
                              rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                             rdfs:label "Add Disturbance"@en .
+                             rdfs:label "Add Disturbance"@en ;
+                             skos:definition "An action that introduces a disturbance, such as a breakdown or interruption, into the production model to evaluate its effect on manufacturing operations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_Equipment
 ecsel-dr-GDM:Add_Equipment rdf:type owl:Class ;
                            rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                           rdfs:label "Add Equipment"@en .
+                           rdfs:label "Add Equipment"@en ;
+                           skos:definition "The action of introducing a new piece of equipment into the production configuration, expanding the available manufacturing or measurement capacity."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_New_Capability
@@ -20111,7 +20181,8 @@ ecsel-dr-GDM:Bill_Of_Materials rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Calendar
 ecsel-dr-GDM:Calendar rdf:type owl:Class ;
                       rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                      rdfs:label "Calendar"@en .
+                      rdfs:label "Calendar"@en ;
+                      skos:definition "A structured representation of working periods, shifts, and non-working times used to schedule and constrain production activities and resource availability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Capability
@@ -20151,19 +20222,22 @@ ecsel-dr-GDM:Cluster rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Current_Machine_State
 ecsel-dr-GDM:Current_Machine_State rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                   rdfs:label "Current Machine State"@en .
+                                   rdfs:label "Current Machine State"@en ;
+                                   skos:definition "The present operational status of a machine, such as running, idle, down, or in maintenance, at a given moment during production."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Current_WIP
 ecsel-dr-GDM:Current_WIP rdf:type owl:Class ;
                          rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                         rdfs:label "Current Wip" .
+                         rdfs:label "Current Wip" ;
+                         skos:definition "A point-in-time snapshot of work in progress showing the actual distribution and status of lots or material that have entered production but have not completed all required operations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Cycle_Time_Commitment
 ecsel-dr-GDM:Cycle_Time_Commitment rdf:type owl:Class ;
                                    rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                   rdfs:label "Cycle Time Commitment"@en .
+                                   rdfs:label "Cycle Time Commitment"@en ;
+                                   skos:definition "A committed target for the time in which a product or material is expected to complete a defined production scope during a specified period."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Delivery_Commitment
@@ -20217,7 +20291,8 @@ ecsel-dr-GDM:Equipment rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Equipment_Capability
 ecsel-dr-GDM:Equipment_Capability rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Equipment Capability"@en .
+                                  rdfs:label "Equipment Capability"@en ;
+                                  skos:definition "A qualified ability of a specific piece of equipment to execute a particular operation under defined production conditions."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Equipment_Group
@@ -20342,7 +20417,8 @@ ecsel-dr-GDM:Maintenance rdf:type owl:Class ;
 ecsel-dr-GDM:Material rdf:type owl:Class ;
                       owl:equivalentClass ecsel-dr-PMV:Material ;
                       rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                      rdfs:label "Material"@en .
+                      rdfs:label "Material"@en ;
+                      skos:definition "Physical matter used, transformed, produced, or consumed in a process, including raw and processed materials, components, parts, assemblies, consumables, fuels, lubricants, coolants, and cleaning agents."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Material_Consumption
@@ -20362,7 +20438,8 @@ ecsel-dr-GDM:Material_Transfer rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Max_Lot_Size
 ecsel-dr-GDM:Max_Lot_Size rdf:type owl:Class ;
                           rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                          rdfs:label "Max Lot Size"@en .
+                          rdfs:label "Max Lot Size"@en ;
+                          skos:definition "The maximum quantity of units permitted in a production lot for a defined product and fabrication context."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Operation
@@ -20483,25 +20560,29 @@ ecsel-dr-GDM:Supply_Chain rdf:type owl:Class ;
 ecsel-dr-GDM:Target_Costs rdf:type owl:Class ;
                           owl:equivalentClass ecsel-dr-SO:Target_Costs ;
                           rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                          rdfs:label "Target Costs"@en .
+                          rdfs:label "Target Costs"@en ;
+                          skos:definition "The cost level that a product or service must achieve to meet the desired sales revenue and income objectives or contractual commitments."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_Revenue
 ecsel-dr-GDM:Target_Revenue rdf:type owl:Class ;
                             rdfs:subClassOf dr:Product_Lobe ;
-                            rdfs:label "Target Revenue"@en .
+                            rdfs:label "Target Revenue"@en ;
+                            skos:definition """Target Revenue represents the planned or expected revenue set as a business target for a product over a defined planning horizon."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_Service_Level
 ecsel-dr-GDM:Target_Service_Level rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Target Service Level"@en .
+                                  rdfs:label "Target Service Level"@en ;
+                                  skos:definition "A performance target expressing the intended proportion of orders or demand that should be satisfied within the defined service conditions."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Target_WIP
 ecsel-dr-GDM:Target_WIP rdf:type owl:Class ;
                         rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                        rdfs:label "Target WIP"@en .
+                        rdfs:label "Target WIP"@en ;
+                        skos:definition "The planned range of work-in-progress units to be maintained for a product in order to support the intended production flow."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Team
@@ -20529,7 +20610,8 @@ ecsel-dr-GDM:Time_Constraint rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Worker_Qualification
 ecsel-dr-GDM:Worker_Qualification rdf:type owl:Class ;
                                   rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                  rdfs:label "Worker Qualification"@en .
+                                  rdfs:label "Worker Qualification"@en ;
+                                  skos:definition "A specification of the qualified workforce required or available to operate equipment, work within a team, or perform maintenance activities."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Workplan
@@ -21049,7 +21131,8 @@ ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_Industrial_Qualification rdf:typ
 ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution_With_Sensor rdf:type owl:Class ;
                                                             rdfs:subClassOf ecsel-dr-OOSMP:Motor_Control_And_Drive_Solution ;
                                                             rdfs:comment "Motor control and drive solution with sensor"@en ;
-                                                            rdfs:label "Motor Control And Drive Solution With Sensor"@en .
+                                                            rdfs:label "Motor Control And Drive Solution With Sensor"@en ;
+                                                            skos:definition """Motor Control And Drive Solution With Sensor is a Motor Control And Drive Solution: a semiconductor solution that drives and controls a motor and additionally integrates a sensor."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-OOSMP#Motor_Control_And_Drive_Solution_Without_Sensor
@@ -23109,7 +23192,8 @@ Example: mathematical entities: formal semantics elements, regions within dimens
 ###  http://www.w3id.org/ecsel-dr-Power-PWR#Gate_Driver
 <http://www.w3id.org/ecsel-dr-Power-PWR#Gate_Driver> rdf:type owl:Class ;
                                                      rdfs:subClassOf dr:Power_Lobe ;
-                                                     rdfs:label "Gate Driver"@en .
+                                                     rdfs:label "Gate Driver"@en ;
+                                                     skos:definition """Gate Driver represents a circuit or component that amplifies control signals to switch power semiconductor devices, such as MOSFETs or IGBTs, on and off."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Power-PWR#Geometric_Dimension
@@ -23292,7 +23376,8 @@ This classification is done by The Global Industry Classification Standard (GICS
 ###  http://www.w3id.org/ecsel-dr-Power-PWR#Operating_Property
 <http://www.w3id.org/ecsel-dr-Power-PWR#Operating_Property> rdf:type owl:Class ;
                                                             rdfs:subClassOf <http://www.w3id.org/ecsel-dr-Power-PWR#Property> ;
-                                                            rdfs:label "Operating Property"@en .
+                                                            rdfs:label "Operating Property"@en ;
+                                                            skos:definition """A characteristic that describes how a device operates under specified conditions, covering aspects such as power ranges, power sources, standard configurations, or attachments."""@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-Power-PWR#Operation_Mode
@@ -24308,27 +24393,32 @@ ecsel-dr-SO:Workshop rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr/quality/Assembly_Lot
 <http://www.w3id.org/ecsel-dr/quality/Assembly_Lot> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> .
+                                                    rdfs:subClassOf <http://www.w3id.org/digital-reference/quality/Lot> ;
+                                                    skos:definition "A production lot grouping devices that are processed together through the assembly (back-end) stage, tracked as a single unit for manufacturing control and quality traceability."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Failure_Analysis
 <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> rdf:type owl:Class ;
-                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                        skos:definition "The systematic investigation of a failed or non-conforming device to determine the root cause of failure, supporting corrective action and quality improvement."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Quality_Request
 <http://www.w3id.org/ecsel-dr/quality/Quality_Request> rdf:type owl:Class ;
-                                                       rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                       rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                       skos:definition "A request raised regarding product quality, such as a customer complaint or issue report, that initiates investigation and resolution within the quality-management process."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Quality_Response
 <http://www.w3id.org/ecsel-dr/quality/Quality_Response> rdf:type owl:Class ;
-                                                        rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                        rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                        skos:definition "The formal reply issued in answer to a quality request, communicating findings, corrective actions, or resolution back to the customer or requester."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr/quality/Substrate
 <http://www.w3id.org/ecsel-dr/quality/Substrate> rdf:type owl:Class ;
-                                                 rdfs:subClassOf dr:Quality_Management_Lobe .
+                                                 rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                 skos:definition "The base wafer or supporting material on which semiconductor devices are fabricated, tracked within quality management for identification and traceability."@en .
 
 
 #################################################################
