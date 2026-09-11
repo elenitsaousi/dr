@@ -1430,10 +1430,17 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
                                                                         rdfs:range <http://www.w3id.org/digital-reference/quality/Quality_Complaint_Line_Item> .
 
 
+###  http://www.w3id.org/digital-reference/quality/has_process
+<http://www.w3id.org/digital-reference/quality/has_process> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://www.w3id.org/digital-reference/quality/Lot> ;
+                                                            rdfs:range ecsel-dr-SO:Process ;
+                                                            rdfs:label "has process"@en .
+
+
 ###  http://www.w3id.org/digital-reference/quality/has_responsible_contact_reference
 <http://www.w3id.org/digital-reference/quality/has_responsible_contact_reference> rdf:type owl:ObjectProperty ;
                                                                                   rdfs:domain <http://www.w3id.org/digital-reference/quality/Step_D3> ;
-                                                                                  rdfs:range <http://www.w3id.org/digital-reference/quality/Group> ;
+                                                                                  rdfs:range <http://www.w3id.org/digital-reference/quality/Contact_Group> ;
                                                                                   rdfs:label "has responsible contact reference" .
 
 
@@ -1466,6 +1473,13 @@ ssn-system:in_condition rdf:type owl:ObjectProperty ;
 <http://www.w3id.org/digital-reference/quality/shipped_in> rdf:type owl:ObjectProperty ;
                                                            rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
                                                            rdfs:range <http://www.w3id.org/digital-reference/quality/Shipment> .
+
+
+###  http://www.w3id.org/digital-reference/quality/was_produced_in
+<http://www.w3id.org/digital-reference/quality/was_produced_in> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://www.w3id.org/digital-reference/quality/Lot> ;
+                                                                rdfs:range ecsel-dr-GDM:Location ;
+                                                                rdfs:label "was produced in"@en .
 
 
 ###  http://www.w3id.org/ecsel-dr#fulfilled_by_demand_fulfillment
@@ -8003,12 +8017,6 @@ ecsel-dr-SO:uses_one_or_more_technology rdf:type owl:ObjectProperty ;
                                                   rdfs:range dr:Customer .
 
 
-###  http://www.w3id.org/ecsel-dr/qualty/is_executed_on
-<http://www.w3id.org/ecsel-dr/qualty/is_executed_on> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <http://www.w3id.org/ecsel-dr/quality/Failure_Analysis> ;
-                                                     rdfs:range <http://www.w3id.org/digital-reference/quality/Product_Instance> .
-
-
 #################################################################
 #    Data properties
 #################################################################
@@ -8023,6 +8031,13 @@ sosa:result_time rdf:type owl:DatatypeProperty ;
                  rdfs:isDefinedBy sosa:resultTime ;
                  rdfs:label "result time"@en ;
                  skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
+
+
+###  http://www.w3id.org/digital-reference/quality/ECID
+<http://www.w3id.org/digital-reference/quality/ECID> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://www.w3id.org/digital-reference/quality/Product_Instance> ;
+                                                     rdfs:range xsd:string ;
+                                                     rdfs:label "ECID" .
 
 
 ###  http://www.w3id.org/digital-reference/quality/ID
@@ -15079,10 +15094,11 @@ ssn-system:System_Property rdf:type owl:Class ;
                            rdfs:label "System Property"@en .
 
 
-###  http://www.w3id.org/digital-reference/quality/Group
-<http://www.w3id.org/digital-reference/quality/Group> rdf:type owl:Class ;
+###  http://www.w3id.org/digital-reference/quality/Contact_Group
+<http://www.w3id.org/digital-reference/quality/Contact_Group> rdf:type owl:Class ;
                                                       rdfs:subClassOf dr:Quality_Management_Lobe ;
-                                                      rdfs:label "Group" .
+                                                      rdfs:label "Contact Group" ;
+                                                      skos:definition "A set of responsible contacts for quality work performed during a quality response."@en .
 
 
 ###  http://www.w3id.org/digital-reference/quality/Lot
@@ -15125,6 +15141,12 @@ ssn-system:System_Property rdf:type owl:Class ;
                                                                             rdfs:subClassOf dr:Quality_Management_Lobe ;
                                                                             rdfs:description "Item details of the technical complaint or Issue as reported by a customer about 1 product / device." ;
                                                                             rdfs:label "Quality Complaint Line Item" .
+
+
+###  http://www.w3id.org/digital-reference/quality/Root_Cause_Analysis
+<http://www.w3id.org/digital-reference/quality/Root_Cause_Analysis> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf dr:Quality_Management_Lobe ;
+                                                                   rdfs:label "Root Cause Analysis"@en .
 
 
 ###  http://www.w3id.org/digital-reference/quality/Shipment
@@ -15562,7 +15584,8 @@ This lobe represents the units of technical data transfer, product lifecycle pha
 ###  http://www.w3id.org/ecsel-dr-AT#AMQP
 ecsel-dr-AT:AMQP rdf:type owl:Class ;
                  rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol ;
-                 rdfs:label "AMQP"@en .
+                 rdfs:label "AMQP"@en ;
+                 skos:definition "An open application-layer messaging protocol that defines interoperable message exchange, routing, delivery, and reliability semantics, commonly used in distributed systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI
@@ -15589,7 +15612,8 @@ ecsel-dr-AT:ANSI_X12_Data_Format rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ANSI_X12_Specification
 ecsel-dr-AT:ANSI_X12_Specification rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-AT:EDI_Specification ;
-                                   rdfs:label "ANSI X12 Specification"@en .
+                                   rdfs:label "ANSI X12 Specification"@en ;
+                                   skos:definition "A specification defining electronic data-interchange transaction sets and syntax maintained by the Accredited Standards Committee X12."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#APS
@@ -15602,13 +15626,15 @@ ecsel-dr-AT:APS rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#ARCNET
 ecsel-dr-AT:ARCNET rdf:type owl:Class ;
                    rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                   rdfs:label "ARCNET"@en .
+                   rdfs:label "ARCNET"@en ;
+                   skos:definition "A legacy local-area network technology using token passing to control access to a shared communication medium."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#AS2
 ecsel-dr-AT:AS2 rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol ;
-                rdfs:label "AS2"@en .
+                rdfs:label "AS2"@en ;
+                skos:definition "Applicability Statement 2, an HTTP- or HTTPS-based protocol for securely transporting business documents using MIME, digital signatures, encryption, and acknowledgements."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Actuator_Device
@@ -15621,13 +15647,15 @@ ecsel-dr-AT:Actuator_Device rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Apple_Talk
 ecsel-dr-AT:Apple_Talk rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:OSI_3_4_Network_Technology ;
-                       rdfs:label "Apple Talk"@en .
+                       rdfs:label "Apple Talk"@en ;
+                       skos:definition "A legacy proprietary networking protocol suite developed by Apple for communication among Apple devices and services."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Assembly_Line_Planning
 ecsel-dr-AT:Assembly_Line_Planning rdf:type owl:Class ;
                                    rdfs:subClassOf ecsel-dr-AT:PLM1_Module ;
-                                   rdfs:label "Assembly Line Planning"@en .
+                                   rdfs:label "Assembly Line Planning"@en ;
+                                   skos:definition "The planning activity concerned with allocating operations, resources, workstations, and sequencing for an assembly line."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Auto_Gration_Specification
@@ -15641,7 +15669,8 @@ Relies on XML as data syntax, XML Schema as knowledge representation scheme and 
 ###  http://www.w3id.org/ecsel-dr-AT#Automation_Markup_Language
 ecsel-dr-AT:Automation_Markup_Language rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
-                                       rdfs:label "Automation Markup Language"@en .
+                                       rdfs:label "Automation Markup Language"@en ;
+                                       skos:definition "An XML-based language or markup representation for describing automation-related data, structures, or services; the exact scope depends on the ontology’s source vocabulary."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Autonomously_Guided_Vehicle
@@ -15664,7 +15693,8 @@ ecsel-dr-AT:B2MML_Based_Service rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#B2M_Markup_Language
 ecsel-dr-AT:B2M_Markup_Language rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AT:Markup_Language ;
-                                rdfs:label "B2M Markup Language"@en .
+                                rdfs:label "B2M Markup Language"@en ;
+                                skos:definition "A markup language intended to represent business-to-manufacturing information exchange; the precise specification should be verified because the name is not uniquely identifying."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#BI_System
@@ -15677,19 +15707,22 @@ ecsel-dr-AT:BI_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Big_Data_Analytics_System
 ecsel-dr-AT:Big_Data_Analytics_System rdf:type owl:Class ;
                                       rdfs:subClassOf ecsel-dr-AT:IT_System ;
-                                      rdfs:label "Big Data Analytics System"@en .
+                                      rdfs:label "Big Data Analytics System"@en ;
+                                      skos:definition "A system that stores, processes, and analyzes large, fast, or heterogeneous datasets using distributed or otherwise scalable data-processing technologies."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bit
 ecsel-dr-AT:Bit rdf:type owl:Class ;
                 rdfs:subClassOf ecsel-dr-AT:Data_Transmission_Unit ;
-                rdfs:label "Bit"@en .
+                rdfs:label "Bit"@en ;
+                skos:definition "The basic unit of digital information, representing one of two possible values, conventionally 0 or 1."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bluetooth
 ecsel-dr-AT:Bluetooth rdf:type owl:Class ;
                       rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                      rdfs:label "Bluetooth"@en .
+                      rdfs:label "Bluetooth"@en ;
+                      skos:definition "A short-range wireless communication technology for exchanging data between devices over personal-area networks."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Bridge
@@ -15709,151 +15742,176 @@ ecsel-dr-AT:CAD_System rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#CAN_Bus
 ecsel-dr-AT:CAN_Bus rdf:type owl:Class ;
                     rdfs:subClassOf ecsel-dr-AT:Fieldbus_Car_Airplane ;
-                    rdfs:label "CAN Bus"@en .
+                    rdfs:label "CAN Bus"@en ;
+                    skos:definition "A multi-master serial communication bus designed for reliable real-time communication among electronic controllers, especially in vehicles and industrial systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF10_VNET_IP
 ecsel-dr-AT:CPF10_VNET_IP rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                          rdfs:label "CPF10 VNET IP"@en .
+                          rdfs:label "CPF10 VNET IP"@en ;
+                          skos:definition "A Common Industrial Protocol network family identified as Vnet/IP, used for industrial communication; the exact profile and scope should be verified against the source standard."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF11_TC_Net
 ecsel-dr-AT:CPF11_TC_Net rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                         rdfs:label "CPF11 TC Net"@en .
+                         rdfs:label "CPF11 TC Net"@en ;
+                         skos:definition "An industrial communication network profile identified as TCnet within the Common Industrial Protocol family; precise semantics should be validated against the source standard."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF12_Ether_CAT
 ecsel-dr-AT:CPF12_Ether_CAT rdf:type owl:Class ;
                             rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                            rdfs:label "CPF12 Ether CAT"@en .
+                            rdfs:label "CPF12 Ether CAT"@en ;
+                            skos:definition "EtherCAT, an Ethernet-based industrial communication technology designed for deterministic, synchronized, and high-performance control communication."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF13_Ethernet_Powerlink
 ecsel-dr-AT:CPF13_Ethernet_Powerlink rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                                     rdfs:label "CPF13 Ethernet Powerlink"@en .
+                                     rdfs:label "CPF13 Ethernet Powerlink"@en ;
+                                     skos:definition "POWERLINK, a deterministic real-time Ethernet communication technology used for synchronized industrial automation and motion-control systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF14_EPA
 ecsel-dr-AT:CPF14_EPA rdf:type owl:Class ;
                       rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                      rdfs:label "CPF14 EPA"@en .
+                      rdfs:label "CPF14 EPA"@en ;
+                      skos:definition "An industrial Ethernet communication profile identified as EPA, commonly interpreted as Ethernet for Plant Automation; exact profile details should be confirmed from the source standard."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF15_Mod_Bus
 ecsel-dr-AT:CPF15_Mod_Bus rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                          rdfs:label "CPF15 Mod Bus"@en .
+                          rdfs:label "CPF15 Mod Bus"@en ;
+                          skos:definition "Modbus, an application-layer industrial communication protocol commonly used for exchanging process data between controllers, sensors, instruments, and supervisory systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF16_SERCOS
 ecsel-dr-AT:CPF16_SERCOS rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                         rdfs:label "CPF16 SERCOS"@en .
+                         rdfs:label "CPF16 SERCOS"@en ;
+                         skos:definition "SERCOS, a real-time digital communication system designed particularly for motion control and coordinated automation devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF17_RAPI_Net
 ecsel-dr-AT:CPF17_RAPI_Net rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                           rdfs:label "CPF17 RAPI Net"@en .
+                           rdfs:label "CPF17 RAPI Net"@en ;
+                           skos:definition "An industrial communication network profile identified as RAPI-Net; its technical scope should be validated against the relevant Common Industrial Protocol specification."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF18_Safety_Net_P
 ecsel-dr-AT:CPF18_Safety_Net_P rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                               rdfs:label "CPF18 Safety Net P"@en .
+                               rdfs:label "CPF18 Safety Net P"@en ;
+                               skos:definition "An industrial communication profile identified as SafetyNet p, intended for safety-related or control-system communication; the exact standard designation should be confirmed."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF1_FOUNDATION_Fieldbus
 ecsel-dr-AT:CPF1_FOUNDATION_Fieldbus rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                                     rdfs:label "CPF1 FOUNDATION Fieldbus"@en .
+                                     rdfs:label "CPF1 FOUNDATION Fieldbus"@en ;
+                                     skos:definition "FOUNDATION Fieldbus, a digital field communication system for process automation instruments and control devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF2_Control_Net
 ecsel-dr-AT:CPF2_Control_Net rdf:type owl:Class ;
                              rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                             rdfs:label "CPF2 Control Net"@en .
+                             rdfs:label "CPF2 Control Net"@en ;
+                             skos:definition "ControlNet, a deterministic industrial network technology for real-time control and I/O communication."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_1_Profibus_DP
 ecsel-dr-AT:CPF3_1_Profibus_DP rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                               rdfs:label "CPF3 1 Profibus DP"@en .
+                               rdfs:label "CPF3 1 Profibus DP"@en ;
+                               skos:definition "PROFIBUS-DP, a high-speed digital fieldbus profile commonly used to connect controllers with distributed peripheral devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_2_Profibus_PA
 ecsel-dr-AT:CPF3_2_Profibus_PA rdf:type owl:Class ;
                                rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                               rdfs:label "CPF3 2 Profibus PA"@en .
+                               rdfs:label "CPF3 2 Profibus PA"@en ;
+                               skos:definition "PROFIBUS-PA, a PROFIBUS profile designed for process automation instrumentation, including operation in hazardous environments with appropriate physical-layer implementations."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_3_Profinet_CBA
 ecsel-dr-AT:CPF3_3_Profinet_CBA rdf:type owl:Class ;
                                 rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                                rdfs:label "CPF3 3 Profinet CBA"@en .
+                                rdfs:label "CPF3 3 Profinet CBA"@en ;
+                                skos:definition "PROFINET Component-Based Automation, a communication approach for integrating automation components as distributed systems."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_4_Profinet_IO_Class_A
 ecsel-dr-AT:CPF3_4_Profinet_IO_Class_A rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                                       rdfs:label "CPF3 4 Profinet IO Class A"@en .
+                                       rdfs:label "CPF3 4 Profinet IO Class A"@en ;
+                                       skos:definition "PROFINET IO Conformance Class A, a baseline conformance category defining required functionality for PROFINET input/output devices and controllers."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_5_Profinet_IO_Class_B
 ecsel-dr-AT:CPF3_5_Profinet_IO_Class_B rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                                       rdfs:label "CPF3 5 Profinet IO Class B"@en .
+                                       rdfs:label "CPF3 5 Profinet IO Class B"@en ;
+                                       skos:definition "PROFINET IO Conformance Class B, an intermediate conformance category adding capabilities beyond the baseline PROFINET IO requirements."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_6_Profinet_IO_Class_C
 ecsel-dr-AT:CPF3_6_Profinet_IO_Class_C rdf:type owl:Class ;
                                        rdfs:subClassOf ecsel-dr-AT:CPF3_Profibus_Profi_Net ;
-                                       rdfs:label "CPF3 6 Profinet IO Class C"@en .
+                                       rdfs:label "CPF3 6 Profinet IO Class C"@en ;
+                                       skos:definition "PROFINET IO Conformance Class C, an advanced conformance category supporting stringent real-time requirements, commonly including isochronous applications."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF3_Profibus_Profi_Net
 ecsel-dr-AT:CPF3_Profibus_Profi_Net rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                                    rdfs:label "CPF3 Profibus Profi Net"@en .
+                                    rdfs:label "CPF3 Profibus Profi Net"@en ;
+                                    skos:definition "A class representing the PROFIBUS and PROFINET family of industrial communication technologies."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF4_P_NET
 ecsel-dr-AT:CPF4_P_NET rdf:type owl:Class ;
                        rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                       rdfs:label "CPF4 P NET"@en .
+                       rdfs:label "CPF4 P NET"@en ;
+                       skos:definition "P-NET, an industrial fieldbus technology used for communication and control among automation devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF5_World_FIP
 ecsel-dr-AT:CPF5_World_FIP rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                           rdfs:label "CPF5 World FIP"@en .
+                           rdfs:label "CPF5 World FIP"@en ;
+                           skos:definition "WorldFIP, an industrial fieldbus technology for deterministic communication between control systems and field devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF6_INTERBUS
 ecsel-dr-AT:CPF6_INTERBUS rdf:type owl:Class ;
                           rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                          rdfs:label "CPF6 INTERBUS"@en .
+                          rdfs:label "CPF6 INTERBUS"@en ;
+                          skos:definition "INTERBUS, a fieldbus system used for cyclic process-data exchange between controllers and distributed automation devices."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF7_Swift_Net
 ecsel-dr-AT:CPF7_Swift_Net rdf:type owl:Class ;
                            rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                           rdfs:label "CPF7 Swift Net"@en .
+                           rdfs:label "CPF7 Swift Net"@en ;
+                           skos:definition "An industrial communication profile identified as SwiftNet; the exact protocol and standard reference should be validated."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF8_CC_Link
 ecsel-dr-AT:CPF8_CC_Link rdf:type owl:Class ;
                          rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                         rdfs:label "CPF8 CC Link"@en .
+                         rdfs:label "CPF8 CC Link"@en ;
+                         skos:definition "CC-Link, an industrial field network technology for communication between controllers, remote I/O, drives, and other automation equipment."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#CPF9_HART
 ecsel-dr-AT:CPF9_HART rdf:type owl:Class ;
                       rdfs:subClassOf ecsel-dr-AT:Fieldbus_Communication_Profile_Family ;
-                      rdfs:label "CPF9 HART"@en .
+                      rdfs:label "CPF9 HART"@en ;
+                      skos:definition "HART, a hybrid industrial communication protocol that overlays digital signals on a conventional 4–20 mA analog instrumentation signal."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Character_Set
@@ -15866,7 +15924,8 @@ ecsel-dr-AT:Character_Set rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Co_AP
 ecsel-dr-AT:Co_AP rdf:type owl:Class ;
                   rdfs:subClassOf ecsel-dr-AT:OSI_5_7_Application_Protocol ;
-                  rdfs:label "Co AP"@en .
+                  rdfs:label "Co AP"@en ;
+                  skos:definition "A constrained application protocol role or component; in many contexts this denotes a CoAP client or application participant, but the intended meaning should be confirmed."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Comma_Separated_Values
@@ -15936,13 +15995,15 @@ ecsel-dr-AT:DSL rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Language_Semantic_Web_Stack_Based
 ecsel-dr-AT:Data_Language_Semantic_Web_Stack_Based rdf:type owl:Class ;
                                                    rdfs:subClassOf ecsel-dr-AT:W3C_L3_Knowledge_Representation ;
-                                                   rdfs:label "Data Language Semantic Web Stack Based"@en .
+                                                   rdfs:label "Data Language Semantic Web Stack Based"@en ;
+                                                   skos:definition "A data language based on Semantic Web technologies, typically representing resources, relationships, identifiers, and machine-interpretable semantics using RDF-family standards."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Language_XML_Based
 ecsel-dr-AT:Data_Language_XML_Based rdf:type owl:Class ;
                                     rdfs:subClassOf ecsel-dr-AT:W3C_L3_Knowledge_Representation ;
-                                    rdfs:label "Data Language XML-Based"@en .
+                                    rdfs:label "Data Language XML-Based"@en ;
+                                    skos:definition "A data language whose syntax and structure are defined using XML."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#Data_Transmission_Unit
@@ -17439,31 +17500,36 @@ ecsel-dr-AT:Zig_Bee_RF4CE rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-AT#2G_GPRS
 <http://www.w3id.org/ecsel-dr-AT#2G_GPRS> rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                                          rdfs:label "2G GPRS"@en .
+                                          rdfs:label "2G GPRS"@en ;
+                                          skos:definition "A packet-oriented data service for second-generation GSM cellular networks, commonly providing mobile IP connectivity at substantially higher efficiency than circuit-switched data."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#3G_UMTS
 <http://www.w3id.org/ecsel-dr-AT#3G_UMTS> rdf:type owl:Class ;
                                           rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                                          rdfs:label "3G UMTS"@en .
+                                          rdfs:label "3G UMTS"@en ;
+                                          skos:definition "A third-generation cellular telecommunications system standardized by 3GPP and based primarily on the UMTS radio-access and core-network architecture."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#4G_LTE
 <http://www.w3id.org/ecsel-dr-AT#4G_LTE> rdf:type owl:Class ;
                                          rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                                         rdfs:label "4G LTE"@en .
+                                         rdfs:label "4G LTE"@en ;
+                                         skos:definition "A fourth-generation mobile broadband system standardized by 3GPP that uses an all-IP core and OFDMA-based radio access to provide high-capacity, low-latency cellular communication."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#5G
 <http://www.w3id.org/ecsel-dr-AT#5G> rdf:type owl:Class ;
                                      rdfs:subClassOf ecsel-dr-AT:OSI_1_2_Net_Access_Technology ;
-                                     rdfs:label "5G"@en .
+                                     rdfs:label "5G"@en ;
+                                     skos:definition "A fifth-generation mobile communication system supporting enhanced broadband, massive machine-type communication, and ultra-reliable low-latency communication."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-AT#6_Lo_WPAN
 <http://www.w3id.org/ecsel-dr-AT#6_Lo_WPAN> rdf:type owl:Class ;
                                             rdfs:subClassOf ecsel-dr-AT:OSI_3_4_Network_Technology ;
-                                            rdfs:label "6 Lo WPAN"@en .
+                                            rdfs:label "6 Lo WPAN"@en ;
+                                            skos:definition "An IPv6-based low-power wireless personal-area-network technology, usually referring to IPv6 over Low-Power Wireless Personal Area Networks as specified by the IETF."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-BMS#Battery_CO2_Savings
@@ -20147,13 +20213,15 @@ ecsel-dr-GDM:Add_Equipment rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_New_Capability
 ecsel-dr-GDM:Add_New_Capability rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                rdfs:label "Add New Capability"@en .
+                                rdfs:label "Add New Capability"@en ;
+                                skos:definition "An addition that associates a new capability with an equipment group, extending the recipe or operation contexts supported by that equipment group."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Add_New_Dedication
 ecsel-dr-GDM:Add_New_Dedication rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                rdfs:label "Add New Dedication"@en .
+                                rdfs:label "Add New Dedication"@en ;
+                                skos:definition "An assignment for new restrictions to a chamber performed at a fab, limiting the recipe, operation, or product contexts permitted for that equipment group."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Aux_Resource
@@ -20209,7 +20277,8 @@ ecsel-dr-GDM:Chamber rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Chamber_Dedication
 ecsel-dr-GDM:Chamber_Dedication rdf:type owl:Class ;
                                 rdfs:subClassOf dr:Semiconductor_Production_Lobe ;
-                                rdfs:label "Chamber Dedication"@en .
+                                rdfs:label "Chamber Dedication"@en ;
+                                skos:definition "An assignment for a chamber, performed at a fab and required by a recipe, that determines where current work in progress can be processed."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Cluster
@@ -20450,7 +20519,15 @@ ecsel-dr-GDM:Operation rdf:type owl:Class ;
                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass ecsel-dr-GDM:Aux_Resource_Requirement
                                        ] ;
-                       rdfs:label "Operation"@en .
+                       rdfs:label "Operation"@en ;
+                       skos:definition "A set of unit process steps in a semiconductor manufacturing route that represents a trackable production activity and together with the unit process steps identifies the resources and conditions relevant to its execution."@en .
+
+
+###  http://www.w3id.org/ecsel-dr-GDM#Unit_Process
+ecsel-dr-GDM:Unit_Process rdf:type owl:Class ;
+                           rdfs:subClassOf dr:Process_Lobe ;
+                           rdfs:label "Unit Process"@en ;
+                           skos:definition "The smallest defined process in a semiconductor manufacturing route, representing a production activity and identifying the resources and conditions relevant to its execution."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Plant
@@ -20491,7 +20568,8 @@ ecsel-dr-GDM:Recipe_Equipment_Config rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Recipe_Group
 ecsel-dr-GDM:Recipe_Group rdf:type owl:Class ;
                           rdfs:subClassOf dr:Process_Lobe ;
-                          rdfs:label "Recipe Group"@en .
+                          rdfs:label "Recipe Group"@en ;
+                          skos:definition "A collection of recipe instances associated with a setup, used to organize production patterns required for a specific production step on an equipment."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Release_Plan
@@ -20517,7 +20595,8 @@ ecsel-dr-GDM:Route rdf:type owl:Class ;
 ###  http://www.w3id.org/ecsel-dr-GDM#Route_Sequence
 ecsel-dr-GDM:Route_Sequence rdf:type owl:Class ;
                             rdfs:subClassOf dr:Process_Lobe ;
-                            rdfs:label "Route Sequence"@en .
+                            rdfs:label "Route Sequence"@en ;
+                            skos:definition "An ordered position within a route that connects an operation or activity to a sequence number."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Setup
@@ -20616,7 +20695,8 @@ ecsel-dr-GDM:Worker_Qualification rdf:type owl:Class ;
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Workplan
 ecsel-dr-GDM:Workplan rdf:type owl:Class ;
-                      rdfs:subClassOf dr:Process_Lobe .
+                      rdfs:subClassOf dr:Process_Lobe ;
+                      skos:definition "A plan containing activity instances and activity edge relationships that organize work required for a product or production process. It serves as a structured specification that defines the sequence, dependencies, and coordination of individual activities and their interconnections to achieve production or project objectives. In semiconductor manufacturing these are sequenced operations and operations consist out of one or more unit processes. This sequence of operations may have a time constraint."@en .
 
 
 ###  http://www.w3id.org/ecsel-dr-GDM#Workshop
